@@ -1,0 +1,6 @@
+﻿  test_tset.cpp
+  test_tbitfield.cpp
+  test_main.cpp
+  Создание кода...
+test_main.obj : warning LNK4075: не учитывается "/EDITANDCONTINUE" из-за спецификации "/SAFESEH"
+  test_bitfield.vcxproj -> C:\Users\Leto\Documents\GitHub\mp2-lab1-set\sln\vc10\Debug\test_bitfield.exe
