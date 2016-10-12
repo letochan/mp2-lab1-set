@@ -8,16 +8,17 @@
 #include "tbitfield.h" 
 
 TBitField::TBitField(int len) 
-{ 
-if (len < 0) throw "NEGATIVE_LENGTH"; 
+{  if (len>0)
+{
 BitLen = len; 
 MemLen = (len+31) » 5; 
 pMem = new TELEM [MemLen]; 
 if (pMem != 0) 
 for (int i = 0; i < MemLen; i++) 
 pMem[i] = 0; 
-
-} 
+}
+else throw "Negative len";
+}
 
 TBitField::TBitField(const TBitField &bf) // конструктор копирования 
 { 
@@ -43,7 +44,7 @@ return n » 5;
 TELEM TBitField::GetMemMask(const int n) const // битовая маска для бита n 
 { 
 TELEM tmp = 1; 
-return tmp « (n % 32); 
+return tmp « (n & 31); 
 } 
 
 // доступ к битам битового поля 
