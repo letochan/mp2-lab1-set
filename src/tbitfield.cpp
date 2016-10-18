@@ -172,7 +172,7 @@ TBitField TBitField::operator~(void) // отрицание
 { 
 int len = BitLen; 
 TBitField tmp(len); 
-for (int i = 0; i < MemLen; i++) 
+for (int i = 0; i < BitLen; i++) 
 tmp.pMem[i] = ~pMem[i]; 
 return tmp; 
 } 
