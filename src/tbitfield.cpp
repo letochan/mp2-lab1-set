@@ -7,7 +7,7 @@
 
 #include "tbitfield.h" 
 
-TBitField::TBitField(int len) 
+TBitField::TBitField(int len)   
 {  if (len>0)
 {
 BitLen = len; 
