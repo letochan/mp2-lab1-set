@@ -58,10 +58,7 @@ int TBitField::GetLength(void) const // получить длину (к-во б�
 void TBitField::SetBit(const int n) // установить бит 
 {
 	if ((n > -1) && (n < BitLen))
-	{
-		int i = GetMemIndex(n);
-		pMem[i] = pMem[i] | GetMemMask(n);
-	}
+		pMem[GetMemIndex(n)] |= GetMemMask(n);
 	else throw "SET_BIT_WITH_NEGATIVE_OR_TOO_LARGE_INDEX";
 }
 
