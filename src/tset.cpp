@@ -66,7 +66,7 @@ int TSet::operator==(const TSet &s) const // сравнение множеств
 
 int TSet::operator!=(const TSet &s) const // сравнение множеств 
 {
-	return BitField != s.BitField;
+	return !(this == &s);
 }
 
 TSet TSet::operator+(const TSet &s) // объединение множеств 

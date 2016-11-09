@@ -77,7 +77,7 @@ int TBitField::GetBit(const int n) const // получить значение б
 	if ((n > -1) && (n < BitLen))
 	{
 		int i = GetMemIndex(n);
-		return (pMem[i] & GetMemMask(n)) »(n % 16);
+		return (pMem[i] & GetMemMask(n));
 	}
 	else throw "GET_BIT_WITH_NEGATIVE_OR_TOO_LARGE_INDEX";
 	return 0;
@@ -123,17 +123,7 @@ int TBitField::operator==(const TBitField &bf) const // сравнение
 
 int TBitField::operator!=(const TBitField &bf) const // сравнение 
 {
-	int result = 0;
-	if (BitLen != bf.BitLen)
-		result = 1;
-	else
-		for (int i = 0; i < MemLen; i++)
-			if (pMem[i] != bf.pMem[i])
-			{
-				result = 1;
-				break;
-			}
-	return result;
+	return !(this == &bf);
 }
 
 TBitField TBitField::operator|(const TBitField &bf) // операция "или" 
